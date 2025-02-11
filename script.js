@@ -15,13 +15,13 @@ const quotes = [
 // Function to generate a new quote
 function generateQuote() {
     const quoteText = document.getElementById("quote"); // Get the quote element
-    const randomIndex = Math.floor(Math.random() * quotes.length); // Get random index
+    const randomIndex = Math.floor(Math.random() * quotes.length); // Pick a random index
     
     // Apply fade-out effect
     quoteText.style.opacity = 0;
 
     setTimeout(() => {
-        quoteText.innerText = "${quotes[randomIndex]}"; // Corrected way to set text
+        quoteText.innerText = quotes[randomIndex]; // Correctly set the new quote
         quoteText.style.opacity = 1; // Apply fade-in effect
     }, 500);
 }
@@ -29,5 +29,5 @@ function generateQuote() {
 // Attach event listener to the button
 document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("quoteButton").addEventListener("click", generateQuote);
-    generateQuote(); // Show a random quote when the page loads
+    generateQuote(); // Show a random quote on page load
 });
