@@ -28,5 +28,8 @@ function generateQuote() {
     }, 500);
 }
 
-// Generate a random quote when the page loads
-window.onload = generateQuote;
+// Attach event listener to the button
+document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("quoteButton").addEventListener("click", generateQuote);
+    generateQuote(); // Generate first quote on page load
+});
